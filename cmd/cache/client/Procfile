@@ -1,0 +1,4 @@
+client-0: go run client.go
+client-1: go run client.go
+client-2: go run client.go
+client-3: go run client.go

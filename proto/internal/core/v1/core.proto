@@ -1,0 +1,35 @@
+syntax = "proto3";
+package core.v1;
+
+option go_package = "github.com/tachunwu/distsys/pkg/proto/core/v1";
+
+// import "google/protobuf/any.proto";
+// import "google/protobuf/struct.proto";
+
+message Transaction {
+    // Metadata
+    uint64 txn_id = 1;
+    enum TxnType {
+        GET = 0;
+        SET = 1;
+        DELETE = 2;
+    }
+    TxnType txn_type = 2;
+
+    // Data
+    bytes key = 11;
+    bytes value = 12;
+   
+}
+
+message DistTransaction {
+    // Transaction operation keys
+    repeated bytes read_set = 11;
+    repeated bytes write_set = 12;
+    repeated bytes read_write_set = 13;
+
+    // Shard scheduling
+    repeated uint64 readers = 41;
+    repeated uint64 writers = 42;
+}
+

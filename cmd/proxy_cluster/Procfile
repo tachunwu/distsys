@@ -1,0 +1,4 @@
+proxy-0: ./../nats/nats-server -js -V --port=4222 --store_dir=./data/proxy-0
+# proxy-1: ./../nats/nats-server -js -V --port=4223 --store_dir=./data/proxy-1
+# proxy-2: ./../nats/nats-server -js -V --port=4224 --store_dir=./data/proxy-2
+ 

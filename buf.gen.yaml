@@ -1,0 +1,18 @@
+---
+version: "v1"
+managed:
+  enabled: true
+  go_package_prefix:
+    default: "github.com/tachunwu/distsys/pkg/proto"
+    except:
+      - "buf.build/envoyproxy/protoc-gen-validate"
+      - "buf.build/googleapis/googleapis"
+plugins:
+  - name: go
+    out: "./pkg/proto"
+    opt: paths=source_relative
+  - name: go-grpc
+    out: "./pkg/proto"
+    opt:
+      - paths=source_relative
+      - require_unimplemented_servers=false
